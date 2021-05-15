@@ -1,20 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
+// Define title of the website to be passed around pages
+const title = 'Medicine Exchange';
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Medicine Exchange' });
+router.get('/', function (req, res, next) {
+  res.render('index', { title });
 });
 
 /* Get Login page */
-router.get('/login', function(req, res) {
-    res.render('login.ejs')
+router.get('/login', function (req, res) {
+  res.render('login', { title })
 });
 
-/* Get Signup page*/ 
-router.get('/signup', function(req, res) {
-    res.render('signup.ejs') 
+/* Get Signup page*/
+router.get('/signup', function (req, res) {
+  res.render('signup', { title })
 });
 
 /* Get Profile Page */
