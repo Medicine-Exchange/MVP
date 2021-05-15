@@ -16,5 +16,24 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "description": "Prototype for Medicine-Exchange web app",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Medicine-Exchange/MVP.git"
+  },
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Bobby",
+      "email": "bobbyskhs@gmail.com",
+      "url": "https://thatcomputerscientist.com/"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Medicine-Exchange/MVP/issues"
+  },
+  "homepage": "https://github.com/Medicine-Exchange/MVP#readme"
 }
