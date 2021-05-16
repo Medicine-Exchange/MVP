@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">Medicine Exchange</a>
+        </div>
+        <form class="navbar-form navbar-left no-gutter">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for Medicines">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Search</button>
+                </span>
+            </div>
+        </form>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li <% if (page==='home' ) { %>class="active" <% } %>><a href="./">Home <span
+                                class="sr-only">(current)</span></a></li>
+                <li <% if (page==='login' ) { %>class="active" <% } %>><a href="login">Login</a></li>
+
+                <!-- Only to be shown when the user is logged in -->
+                <li class="dropdown" id="loggedInMenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">My Account <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Orders</a></li>
+                        <li><a href="#">My Donations</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    // We save the user id i local storage for easy access.
+    var isLoggedIn = localStorage.getItem('userId');
+    if (!isLoggedIn) {
+        document.getElementById("loggedInMenu").outerHTML = "";
+    }
+</script>
