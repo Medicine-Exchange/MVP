@@ -19,6 +19,16 @@ router.get('/signup', function (req, res) {
   res.render('signup', { title })
 });
 
+/* Donation page*/
+router.get('/donate', function (req, res) {
+  res.render('donate', { title })
+});
+
+/* Request Medicine page*/
+router.get('/request', function (req, res) {
+  res.render('request', { title })
+});
+
 /* Get Profile Page */
 // router.get('/profile', isLoggedIn, function(req, res) {
 //     res.render('profile.ejs', {

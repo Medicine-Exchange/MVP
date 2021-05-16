@@ -1,0 +1,100 @@
+<%- include('common/header.ejs', {title, page: 'Request a Medicine' }); %>
+    <%- include('common/navigation.ejs', {page: 'request' }); %>
+        <div class="container">
+            <h1>Request a Medicine</h1>
+            <p><small>Please only request a medicine if you can't find a medicine by searching for its name or composition.</small></p>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label>Name of the Medicine</label>
+                    <input type="text" class="form-control" name="medicine_name" placeholder="Name of the Medicine">
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select class="form-control">
+                        <option disabled>Type of the Medicine</option>
+                        <option>Tablets</option>
+                        <option>Syrup</option>
+                        <option>Injection</option>
+                        <option>Drops</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" class="form-control" min="1" value="1" placeholder="Quantity of the Medicine">
+                </div>
+                <div class="form-group">
+                    <label>Composition</label>
+                    <input type="text" class="form-control" placeholder="Composition of the Medicine">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input id="togglePickupAddress" type="checkbox"> Use my default address as drop address
+                        </label>
+                    </div>
+                </div>
+                <div class="row" style="display: none" id="address">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="inputFullName">Full Name</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputFullName" name="full-name"
+                                    placeholder="Full Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddressLine1">Address Line 1</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputAddressLine1" name="address-line1"
+                                    placeholder="Address Line 1">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddressLine2">Address Line 2</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputAddressLine2" name="address-line2"
+                                    placeholder="Address Line 2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputCityTown">City / Town</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputCityTown" name="city-town"
+                                    placeholder="City / Town">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputStateProvinceRegion">State</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputStateProvinceRegion"
+                                    name="state-province-region" placeholder="State / Province / Region">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputZipPostalCode">PIN Code</label>
+                            <div>
+                                <input type="text" class="form-control" id="inputZipPostalCode" name="zip-postal-code"
+                                    placeholder="PIN Code">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Request</button>
+            </form>
+        </div>
+        <%- include('common/footer.ejs'); %>
+            <script>
+                $('#togglePickupAddress').change(function () {
+                    if ($(this).prop("checked")) {
+                        $('#address').show();
+                    } else {
+                        $('#address').hide();
+                    }
+                });
+            </script>
