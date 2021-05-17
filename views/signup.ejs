@@ -32,6 +32,9 @@
                     <input type="number" class="form-control" name="aadhar_number">
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+                <%- include("javascripts/firebaseConfig.js"); %>
             </form>
             <hr>
             <p>Already have an account? <a href="/login">Login</a></p>

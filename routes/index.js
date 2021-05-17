@@ -36,6 +36,11 @@ router.get('/request', function (req, res) {
 //     });
 // });
 
+/* Verify OTP */
+router.post('/otp' , function(req,res){
+  res.render('verifyotp' , {title})
+});
+
 // // LOGOUT ==============================
 // router.get('/logout', function(req, res) {
 //     req.logout();
