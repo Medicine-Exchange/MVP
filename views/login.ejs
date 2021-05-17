@@ -1,30 +1,21 @@
 <%- include('common/header.ejs', {title, page: 'Login' }); %>
 <%- include('common/navigation.ejs', {page: 'login' }); %>
-
     <div class="container">
         <div class="col-sm-6 col-sm-offset-3">
             <h1><span class="fa fa-sign-in"></span> Login</h1>
             <!-- LOGIN FORM -->
             <!-- Login route is wrong here. Don't pass action or method right now. Handle it with JS - Removing -->
-            <!-- <form> -->
+            <form>
                 <div class="form-group">
                     <label>Mobile Number</label>
-                    <input id = "mobile_number" type="text" class="form-control" name="mobile_number">
+                    <input type="text" class="form-control" name="mobile_number">
                 </div>
                 <div class="form-group">
-                    <label>Verification Code</label>
-                    <input id = "verification_code" type="text" class="form-control" name="verification_code">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
                 </div>
-                <div id="recaptcha-container"></div>
-                
-                <button id = "get_otp" class="btn btn-warning btn-lg">Get OTP</button>
-                <button id = "confirm_otp" class="btn btn-warning btn-lg">Confirm OTP</button>
-                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-                <script src="javascripts/firebaseConfig.js"></script>
-                <script src="javascripts/auth.js"></script>
-               
-            <!-- </form> -->
+                <button type="submit" class="btn btn-warning btn-lg">Login</button>
+            </form>
             <hr>
             <p>Need an account? <a href="/signup">Signup</a></p>
             <p>Or go <a href="/">home</a>.</p>
