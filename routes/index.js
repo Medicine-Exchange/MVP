@@ -30,11 +30,9 @@ router.get('/request', function (req, res) {
 });
 
 /* Get Profile Page */
-// router.get('/profile', isLoggedIn, function(req, res) {
-//     res.render('profile.ejs', {
-//         user : req.user
-//     });
-// });
+router.get('/userProfile', function(req, res) {
+    res.render('userProfile.ejs', { title });
+});
 
 /* Verify OTP */
 router.post('/otp' , function(req,res){
