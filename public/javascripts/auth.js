@@ -15,20 +15,15 @@ document.getElementById("get_otp").addEventListener("click",function() {
     });
  //   );
 })
-var express = require('express');
-var router = express.Router();
-var app = express();
-var indexRouter = require('./routes/signup');
 document.getElementById("confirm_otp").addEventListener("click",function() {
     const otp = document.getElementById("verification_code").value;
     confirmationResult.confirm(otp).then(result => {
         const user = result.user;
-        app.use(function(req, res, next) {
-            next(createError(404));
-          });
-    }).catch((error) => {
+        app.post()
+    })
+    .catch((error) => {
         alert("Invalid otp entered")
     })
-})
+  })
 
 
