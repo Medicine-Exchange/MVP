@@ -1,22 +1,25 @@
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 document.getElementById("get_otp").addEventListener("click",function() {
     var mobile_number = document.getElementById("mobile_number").value;
+    mobile_number = "+91" + mobile_number
+    console.log(mobile_number)
     if (!mobile_number) {
         alert("Enter a Valid Mobile Number");
         return false;
     }
 
-    const phoneNumber = document.getElementById("mobile_number").value;
+    //const phoneNumber = document.getElementById("mobile_number").value;
     
     var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+    firebase.auth().signInWithPhoneNumber(mobile_number, appVerifier)
     .then(function (confirmationResult) {
       // confirmationResult can resolve with the fictional testVerificationCode above.
       window.confirmationResult = confirmationResult
+      console.log(confirmationResult)
       document.getElementById("confirm_otp").style = "visibility : visible;"
       document.getElementById("get_otp").style = "display: none;"
       document.getElementById("verification-code").style = "visibility: visible;"
-      document.getElementById("recaptcha-container").style = "display;"
+      document.getElementById("recaptcha-container").style = "display: none;"
     }).catch(function (error) {
       // Error; SMS not sent
       // ...
@@ -29,6 +32,7 @@ document.getElementById("confirm_otp").addEventListener("click",function() {
     
     confirmationResult.confirm(otp).then(result => {
         const user = result.user;
+        console.log(user)
        // app.post()
     })
     .catch((error) => {
@@ -39,7 +43,9 @@ document.getElementById("confirm_otp").addEventListener("click",function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       //alert("User signed in")
-      window.location.href = "/userProfile"
+      console.log(user)
+      console.log("xyz")
+       window.location.href = "/userProfile"
     } else {
       alert("User not signed in")
       // No user is signed in.
