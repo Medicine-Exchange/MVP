@@ -35,5 +35,3 @@ confirmOTPButton.addEventListener("click", function () {
       alert("Invalid OTP entered")
     })
 });
-
-
