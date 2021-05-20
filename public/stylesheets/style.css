@@ -72,3 +72,7 @@ a {
     line-height: 60px;
   }
 }
+
+a {
+  cursor: pointer;
+}

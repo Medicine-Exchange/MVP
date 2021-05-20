@@ -1,51 +1,39 @@
+const confirmOTPButton = document.getElementById("confirm_otp");
+const getOTPButton = document.getElementById("get_otp");
+const verificationCode = document.getElementById("verification_code");
+const verificationCodeContainer = document.getElementById("verification-code");
+const recaptchaContainer = document.getElementById("recaptcha-container");
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-document.getElementById("get_otp").addEventListener("click",function() {
-    var mobile_number = document.getElementById("mobile_number").value;
-    if (!mobile_number) {
-        alert("Enter a Valid Mobile Number");
-        return false;
-    }
 
-    const phoneNumber = document.getElementById("mobile_number").value;
-    
-    var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-    .then(function (confirmationResult) {
-      // confirmationResult can resolve with the fictional testVerificationCode above.
+getOTPButton.addEventListener("click", function () {
+  const phoneNumber = document.getElementById("mobile_number").value;
+  if (!phoneNumber) {
+    alert("Enter a Valid Phone Number");
+  } else {
+    const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    getOTPButton.style.display = "none";
+    firebase.auth().signInWithPhoneNumber('+91' + phoneNumber, appVerifier).then(confirmationResult => {
       window.confirmationResult = confirmationResult
-      document.getElementById("confirm_otp").style = "visibility : visible;"
-      document.getElementById("get_otp").style = "display: none;"
-      document.getElementById("verification-code").style = "visibility: visible;"
-      document.getElementById("recaptcha-container").style = "display;"
+      recaptchaContainer.style.display = "none";
+      verificationCodeContainer.style.display = "block";
+      confirmOTPButton.style.display = "block";
     }).catch(function (error) {
-      // Error; SMS not sent
-      // ...
       alert("SMS not sent" + error)
     });
- //   );
-})
-document.getElementById("confirm_otp").addEventListener("click",function() {
-    const otp = document.getElementById("verification_code").value;
-    
-    confirmationResult.confirm(otp).then(result => {
-        const user = result.user;
-       // app.post()
-    })
-    .catch((error) => {
-        alert("Invalid otp entered")
-    })
-  })
-document.getElementById("confirm_otp").addEventListener("click",function() {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      //alert("User signed in")
-      window.location.href = "/userProfile"
-    } else {
-      alert("User not signed in")
-      // No user is signed in.
-    }
-  });
-})
+  }
+});
 
+confirmOTPButton.addEventListener("click", function () {
+  const otp = verificationCode.value;
+
+  confirmationResult.confirm(otp).then(result => {
+    const user = result.user;
+    localStorage.setItem("userId", user.uid);
+    window.location.href = "/userProfile"
+  })
+    .catch((error) => {
+      alert("Invalid OTP entered")
+    })
+});
 
 
