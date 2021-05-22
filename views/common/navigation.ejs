@@ -22,7 +22,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li <% if (page==='home' ) { %>class="active" <% } %>><a href="./">Home <span
                                 class="sr-only">(current)</span></a></li>
-                <li <% if (page==='login' ) { %>class="active" <% } %>><a href="login">Login</a></li>
+                <li <% if (page==='login' || page==='profile' ) { %>class="active" <% } %>><a id="lgnBtn" href="login">Login</a></li>
                 <li <% if (page==='donate' ) { %>class="active" <% } %>><a href="donate">Donate</a></li>
                 <li <% if (page==='request' ) { %>class="active" <% } %>><a href="request">Request</a></li>
 
@@ -47,5 +47,8 @@
     var isLoggedIn = localStorage.getItem('userId');
     if (!isLoggedIn) {
         document.getElementById("loggedInMenu").outerHTML = "";
+    } else {
+        document.getElementById("lgnBtn").innerHTML = "Profile";
+        document.getElementById("lgnBtn").href = "/userProfile";
     }
 </script>
