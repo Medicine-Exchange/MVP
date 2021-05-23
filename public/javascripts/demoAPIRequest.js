@@ -16,12 +16,12 @@ function encodeImageFileAsURL(fileElement) {
     const file = fileElement.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = (event) => {
-      avatarImageElement.style.backgroundImage = `url('${fileReader.result}')`;
-      localStorage.setItem("encodedAvatar", fileReader.result);
+        avatarImageElement.style.backgroundImage = `url('${fileReader.result}')`;
+        localStorage.setItem("encodedAvatar", fileReader.result);
     };
     try {
-      fileReader.readAsDataURL(file);
+        fileReader.readAsDataURL(file);
     } catch (e) {
-      alert("Failed to read image file.");
+        alert("Failed to read image file.");
     }
-  }
+}
