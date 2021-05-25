@@ -34,6 +34,11 @@ router.get('/userProfile', function(req, res) {
     res.render('userProfile.ejs', { title });
 });
 
+/* Get Profile Page */
+router.get('/checkout', function(req, res) {
+    res.render('checkout.ejs', { title });
+});
+
 /* Verify OTP */
 router.post('/otp' , function(req,res){
   res.render('verifyotp' , {title})

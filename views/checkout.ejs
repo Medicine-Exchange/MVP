@@ -1,0 +1,24 @@
+<%- include('common/header.ejs', {title, page: 'Checkout' }); %>
+<%- include('common/navigation.ejs', {page: 'checkout' }); %>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div id="error" class="alert alert-danger" role="alert">You didn't add anything to donate yet. Click this <a href="donate">link</a> to make a donation.</div>
+        <div id="success" class="alert alert-success" role="alert">We have received your donation details. Thank you for the donation.</div>
+        <div id="donationDetails">
+            <p>Please review your donation details before you checkout:</p>
+            <p><strong>Name:</strong> John doe</p>
+            <p><strong>Donations:</strong></p>
+            <ul>
+                <li>Sputnik - V - Injection - 3 Nos</li>
+                <li>Dolo - Tablets - 5 Nos</li>
+                <li>COViShield - Injection - 12 Nos</li>
+            </ul>
+            <p><strong>Address Line 1:</strong> Mansion #12</p>
+            <p><strong>Address Line 2:</strong> Park Street, Dharamtala</p>
+            <p><strong>City:</strong> Kolkata</p>
+            <p><strong>State:</strong> West Bengal</p>
+            <p><strong>PIN Code:</strong> 700016</p>
+            <button class="btn btn-primary">Donate</button>
+        </div>
+    </div>
+<%- include('common/footer.ejs'); %>
