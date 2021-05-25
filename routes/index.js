@@ -59,6 +59,7 @@ router.get('/donorPolicy' , function(req,res){
   res.render('donorPolicy', {title})
 });
 
+
 /* Verify OTP */
 // router.post('/otp' , function(req,res){
 //   res.render('verifyotp' , {title})
