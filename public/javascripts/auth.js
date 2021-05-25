@@ -9,6 +9,7 @@ getOTPButton.addEventListener("click", function () {
   const phoneNumber = document.getElementById("mobile_number").value;
   if (!phoneNumber) {
     alert("Enter a Valid Phone Number");
+    window.location.reload()
   } else {
     const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
     getOTPButton.style.display = "none";
@@ -18,20 +19,27 @@ getOTPButton.addEventListener("click", function () {
       verificationCodeContainer.style.display = "block";
       confirmOTPButton.style.display = "block";
     }).catch(function (error) {
-      alert("SMS not sent" + error)
+      alert("Enter a valid 10 digit phone Number")
+      window.location.reload()
     });
   }
 });
 
+//after login
 confirmOTPButton.addEventListener("click", function () {
   const otp = verificationCode.value;
 
   confirmationResult.confirm(otp).then(result => {
     const user = result.user;
+    console.log(user)
     localStorage.setItem("userId", user.uid);
+    localStorage.setItem("mobileNumber", user.phoneNumber);
+    // console.log(user.phoneNumber);
     window.location.href = "/userProfile"
   })
     .catch((error) => {
       alert("Invalid OTP entered")
     })
 });
+
+
