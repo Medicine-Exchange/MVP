@@ -5,7 +5,7 @@ function setUserLoggedInVariableIfNotPresent() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user && !isLoggedInVariableSet) {
             localStorage.setItem("userId", user.uid);
-             window.location.reload();
+            window.location.reload();
         }
     });
 }
@@ -17,7 +17,7 @@ if (isLoggedInVariableSet) {
     }
 } else {
     setUserLoggedInVariableIfNotPresent();
-    if (currentPathname.toLowerCase().includes('userprofile')) {
+    if (currentPathname.toLowerCase().includes('userprofile') || currentPathname.toLowerCase().includes('donate')) {
         // User is signed out yet the user is on the profile page
         window.location.href = "/login"
     }
