@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // Define title of the website to be passed around pages
-const title = 'Medicine Exchange';
+const title = 'Donate Medicine';
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -43,6 +43,38 @@ router.get('/checkout', function(req, res) {
 router.post('/otp' , function(req,res){
   res.render('verifyotp' , {title})
 });
+/* Get About Us */
+router.get('/aboutUs' , function(req,res){
+  res.render('aboutUs', {title})
+});
+
+/* Get Privacy Policy */
+router.get('/privacyPolicy' , function(req,res){
+  res.render('privacyPolicy', {title})
+});
+
+/* Get FAQ */
+router.get('/FAQ' , function(req,res){
+  res.render('FAQ', {title})
+});
+
+/* Get disclaimer */
+router.get('/disclaimer' , function(req,res){
+  res.render('disclaimer', {title})
+});
+
+/* Get Donor Policy*/
+router.get('/donorPolicy' , function(req,res){
+  res.render('donorPolicy', {title})
+});
+
+
+/* Verify OTP */
+// router.post('/otp' , function(req,res){
+//   res.render('verifyotp' , {title})
+// });
+
+
 
 // // LOGOUT ==============================
 // router.get('/logout', function(req, res) {

@@ -1,15 +1,16 @@
 <%- include('common/header.ejs', {title, page: 'Donate a Medicine' }); %>
     <%- include('common/navigation.ejs', {page: 'donate' }); %>
+    
         <div class="container">
             <h1>Donate a Medicine</h1>
-            <form>
+            <form id = "medicine" class="form-inline" >
                 <div class="form-group">
                     <label>Name of the Medicine</label>
-                    <input type="text" class="form-control" name="medicine_name" placeholder="Name of the Medicine">
+                    <input type="text" name="medicine_name" placeholder="Name of the Medicine">
                 </div>
                 <div class="form-group">
                     <label>Type</label>
-                    <select class="form-control">
+                    <select>
                         <option disabled>Type of the Medicine</option>
                         <option>Tablets</option>
                         <option>Syrup</option>
@@ -19,13 +20,13 @@
                 </div>
                 <div class="form-group">
                     <label>Quantity</label>
-                    <input type="number" class="form-control" min="1" value="1" placeholder="Quantity of the Medicine">
+                    <input type="number" min="1" value="1" placeholder="Quantity of the Medicine">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Composition</label>
-                    <input type="text" class="form-control" placeholder="Composition of the Medicine">
-                </div>
-                <div class="form-group">
+                    <input type="text" placeholder="Composition of Medicine">
+                </div> -->
+                <!-- <div class="form-group">
                     <div class="checkbox">
                         <label>
                             <input id="togglePickupAddress" type="checkbox"> Use my default address as pickup address
@@ -81,26 +82,34 @@
                                     placeholder="PIN Code">
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
                 <div class="form-group">
                     <label>Upload Images of Medicine</label>
-                    <div class="row">
-                        <div class="col-sm-2 imgUp">
                             <div class="imagePreview"></div>
                             <label class="btn btn-primary">
                                 Upload
                                 <input type="file" class="uploadFile img" value="Upload Photo"
-                                    style="width: 0px;height: 0px;overflow: hidden;">
+                                    style="width: 0px;height: 0px;overflow: hidden;" required>
                             </label>
-                        </div>
+                        <!-- </div> -->
                         <i class="fa fa-plus imgAdd"></i>
-                    </div>
+                    <!-- </div> -->
                 </div>
-                <button type="submit" class="btn btn-primary">Donate</button>
-            </form>
-        </div>
+                <div>
+                <button id = "addMedicine"  class="btn btn-primary">Add Medicine</button>
+                </br>
+                <button type="submit"  class="btn btn-primary">Donate</button>
+                </div>
+                </form>
+            </div>
+            <div class ="center" style="left: 50%; right: 50%;">
+                </div>
+            <!-- </form> -->
+        
+        
         <%- include('common/footer.ejs'); %>
+        <%- include('common/policy.ejs'); %>
             <script>
                 $('#togglePickupAddress').change(function () {
                     if ($(this).prop("checked")) {

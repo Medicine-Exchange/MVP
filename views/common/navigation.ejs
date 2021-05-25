@@ -1,5 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
+       
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
                 aria-expanded="false">
@@ -8,16 +9,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./">Medicine Exchange</a>
+            <ul class="nav navbar-nav navbar-left">
+               <li> <div class="logo"><a href = "./" ><img style="margin-top: 5px" src= "logo/DM.png" width="70" height=auto></a></div></li>
+                <li><a href="./" style="color: black" >Donate Medicine</a></li>  
+            </ul>
         </div>
-        <!-- <form class="navbar-form navbar-left no-gutter">
-            <div class="input-group">
+        <form class="navbar-form navbar-left no-gutter">
+            <!-- <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search for Medicines">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Search</button>
                 </span>
-            </div>
-        </form> -->
+            </div> -->
+        </form>
+        
+
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li <% if (page==='home' ) { %>class="active" <% } %>><a href="./">Home <span
