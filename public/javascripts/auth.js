@@ -20,7 +20,7 @@ getOTPButton.addEventListener("click", function () {
       confirmOTPButton.style.display = "block";
     }).catch(function (error) {
       alert("Enter a valid 10 digit phone Number")
-      window.location.reload()
+       window.location.reload()
     });
   }
 });
