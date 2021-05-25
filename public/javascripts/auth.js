@@ -19,8 +19,9 @@ getOTPButton.addEventListener("click", function () {
       verificationCodeContainer.style.display = "block";
       confirmOTPButton.style.display = "block";
     }).catch(function (error) {
-      alert("Enter a valid 10 digit phone Number")
-       window.location.reload()
+      alert("Enter a valid 10 digit phone Number" + error)
+      console.log(error)
+      //  window.location.reload()
     });
   }
 });
