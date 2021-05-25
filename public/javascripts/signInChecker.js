@@ -25,7 +25,7 @@ if (isLoggedInVariableSet) {
 
 function logout() {
     firebase.auth().signOut().then(() => {
-         localStorage.clear()
+        localStorage.clear();
         window.location.href = "/login"
     }).catch((error) => {
         alert('Failed to log out');

@@ -33,7 +33,8 @@
                 <li <% if (page==='request' ) { %>class="active" <% } %>><a href="request">Request</a></li>
 
                 <!-- Only to be shown when the user is logged in -->
-                <li class="dropdown" id="loggedInMenu">
+                <li onclick="logout()" id="loggedInMenu"><a>Logout</a></li>
+                <!-- <li class="dropdown" id="loggedInMenu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">My Account <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -43,7 +44,7 @@
                         <li><a href="#">My Profile</a></li>
                         <li onclick="logout()"><a>Logout</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
