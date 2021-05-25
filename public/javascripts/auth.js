@@ -31,7 +31,7 @@ confirmOTPButton.addEventListener("click", function () {
 
   confirmationResult.confirm(otp).then(result => {
     const user = result.user;
-    console.log(user)
+    // console.log(user)
     localStorage.setItem("userId", user.uid);
     localStorage.setItem("mobileNumber", user.phoneNumber);
     // console.log(user.phoneNumber);

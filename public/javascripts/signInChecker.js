@@ -5,7 +5,7 @@ function setUserLoggedInVariableIfNotPresent() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user && !isLoggedInVariableSet) {
             localStorage.setItem("userId", user.uid);
-            // window.location.reload();
+             window.location.reload();
         }
     });
 }
