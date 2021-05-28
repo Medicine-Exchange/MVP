@@ -59,7 +59,7 @@ function confirmDonation() {
             'x-api-key': 'IxwzZBBo1A2ITRzf7Jlu59yHcCy7mjHr3OOPePqP'
         },
     }).then(response => response.json()).then(result => {
-        if (!result.message.toLowerCase.includes('error')) {
+        if (!result.message.toLowerCase().includes('error')) {
             $('#donationDetails').hide();
             $('#success').show();
             sessionStorage.clear();

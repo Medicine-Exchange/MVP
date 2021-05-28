@@ -1,4 +1,5 @@
 const userId = localStorage.getItem('userId');
+const mobileNumber = localStorage.getItem('mobileNumber');
 let lat;
 let long;
 let mode = 'add';
@@ -14,6 +15,7 @@ fetch(`https://a6onovzgof.execute-api.ap-south-1.amazonaws.com/dev/users?userId=
   if (Object.keys(data).length) {
     // Profile Information is there.
     mode = 'update';
+    document.getElementById("mobile_number").value = mobileNumber;
     document.getElementById("name").value = data.Name;
     document.getElementById("email").value = data.Email;
     document.getElementById("line1").value = data.Address.Line1;
@@ -58,6 +60,7 @@ function updateUserDetails() {
   const data = {
     userId,
     name,
+    mobileNumber,
     email,
     address: {
       line1,
