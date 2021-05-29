@@ -1,221 +1,49 @@
-<%- include('header.ejs', {title, page: 'Home' }); %>
-<!DOCTYPE html>
-<html>
-<head>
-<!-- <style>
-ul {
-  list-style-type: none;
+
+<style>
+  .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
-.icn {
-  float: left;
-  padding: 10px;
-  margin-right: 10px;
-  margin-left: 5px;
-  font-size: 20px;
-  width: 40px;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 5px;
-  /* margin: 5px 2px; */
-  border-radius: 50%;
-}
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-.fa-instagram {
-  background: black;
-  color: white;
-}
-/* .fa-user {
-  background: black;
-  color: white;
-} */
-#horiz{
-    float: left;
-  padding: 10px;
-  margin-top: 5px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  /* color:  */
-}
-#footer {
+</style>
+<br>
+<br>
+<br>
+<br>
 
-			 /* padding: 0px 0px 5px 5px;   */
-             padding-bottom: 10px;
-			 bottom: 5px;
-			width: 100%;
-			/* Height of the footer*/
-			height: 50px;
-			background: rgb(238, 234, 234);
-		}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .icn {
-
-  padding: 5px;
-  margin-right: 5px;
-  margin-left: 2px;
-  font-size: 12px;
-  width: 20px;
-  margin-top: 1px;
-
-  border-radius: 50%;
-}#horiz{
-
-  padding: 5px;
-  margin-top: 2px;
-
-  font-size: 10px;
-}
-
-#footer {
-
-position: fixed;
-             padding-bottom: 5px;
-			 bottom: 2px;
-			height: 50px;
-		}
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .icn {
-
-    padding: 7px;
-    margin-right: 7px;
-    margin-left: 3px;
-    font-size: 13px;
-    width: 29px;
-    margin-top:1px;
-
-    border-radius: 50%;
-  }
-  #horiz{
-
-    padding: 7px;
-    margin-top: 5px;
-    font-weight: 600;
-    font-size: 12px;
-  }
-  #footer {
-position: fixed;
-
-               padding-bottom: 7px;
-  			 bottom: 3px;
-  			height: 60px;
-  		}
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .icn{
-    padding: 6px;
-    margin-right: 6px;
-    margin-left: 4px;
-    font-size: 14px;
-    width: 36px;
-    margin-top: 4px;
-    border-radius: 50%;
-  }
-  #horiz{
-
-    padding: 5px;
-    margin-top: 7px;
-    font-weight: 600;
-    font-size: 11.5px;
-  }
-
-  #footer {
-position: fixed;
-
-               padding-bottom: 5px;
-         bottom: 4px;
-        height: 30px;
-      }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .icn{
-
-    padding: 10px;
-    margin-right: 10px;
-    margin-left: 5px;
-    font-size: 20px;
-    width: 40px;
-    margin-top: 5px;
-    border-radius: 50%;
-  }
-  #horiz{
-
-    padding: 7px;
-    margin-top:15px;
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  #footer {
-
-
-               padding-bottom: 10px;
-         bottom: 5px;
-        height: 45px;
-      }
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .icn{
-
-    padding: 12px;
-    margin-right: 10px;
-    margin-left: 5px;
-    font-size: 20px;
-    width: 40px;
-    margin-top: 5px;
-    border-radius: 50%;
-  }
-  #horiz{
-
-    padding: 9px;
-    margin-top: 5px;
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  #footer {
-position: fixed;
-
-               padding-bottom: 10px;
-         bottom: 5px;
-        height: 50px;
-      }
-}
-
-
-
+<footer class="footer mt-auto py-3 bg-light">
+ <div class = "container-fluid">
+  <div class="row" style = "margin-top: 1%;">
+    <div class="col-md-2 col-sm-1 col-xs-2 col-lg"><a href="aboutUs" style="color: #FF0000" >About Us</a></div>
+    <div class="col-md-2 col-sm-1 col-xs-2 col-lg"><a href="privacyPolicy" style="color: #FF0000">Privacy Policy</a></div>
+    <div class="col-md-2 col-sm-1 col-xs-3 col-lg"><a href="disclaimer" style="color: #FF0000">Disclaimer</a></div>
+    <div class="col-md-2 col-sm-1 col-xs-1 col-lg"><a href="FAQ" style="color: #FF0000">FAQ</a></div>
+    <div class="col-md-2 col-sm-1 col-xs-2 col-lg"><a href="donorPolicy" style="color: #FF0000">Donor Policy</a></div>
+    <div class="col-md-2 col-sm-1 col-xs-2 col-lg">
+    <div class="dropup" id="loggedInMenu" >
+      <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+          aria-expanded="true" style = "color : black">Contact Us <span class="caret"></span></a>
+      <ul class="dropdown-menu pull-right" >
+          <li><a href="tel:+919982882666" style="color: rgba(59, 141, 167, 0.822)">Call Us : +91998288266</a></li>
+          <li><a href = "mailto:donatemedicine.net@gmail.com" style="color: rgba(59, 141, 167, 0.822)">Email : donatemedicine.net@gmail.com</a></li>
+          <li role="separator" class="divider">Socila Media</li>
+          <li><a href="https://www.facebook.com/Donate-Medicine-107228834894880" target="_blank" rel="noopener noreferrer" class="fa fa-facebook icn"></a></li>
+          <li><a href="https://www.linkedin.com/company/donate-medicine/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin icn"></a></li>
+      </ul>
+    </div>
+  </div>
+    <!-- <div class="col-xs-4 col-md-2"><a href="tel:+919982882666" style="color: rgba(59, 141, 167, 0.822)">Contact Us : +91998288266</a></div>
+    <div class="col-xs-4 col-md-3"><a href = "mailto:donatemedicine.net@gmail.com" style="color: rgba(59, 141, 167, 0.822)">Email : donatemedicine.net@gmail.com</a></div>
+    <div class="col-xs-4 col-md-1"><a href="https://www.facebook.com/Donate-Medicine-107228834894880" target="_blank" rel="noopener noreferrer" class="fa fa-facebook icn"></a></div>
+    <div class="col-xs-4 col-md-1"><a href="https://www.linkedin.com/company/donate-medicine/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin icn"></a></div> -->
+  </div>
+</div>
   
-
-</style> -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-<!-- <h2>Navigation Menu</h2>
-<p>In this example, we use CSS to style the list horizontally, to create a navigation menu:</p> -->
-
-<br>
-<br>
-<br>
-<br>
-
-<div id = "footer">
+</footer>
+<!-- <div id = "footer">
     <ul>
     <li id = "horiz" ><a href="aboutUs" style="color: #FF0000">About Us</a></li>
     <li id = "horiz"><a href="privacyPolicy" style="color: #FF0000">Privacy Policy</a></li>
@@ -227,8 +55,7 @@ position: fixed;
     <a href="https://www.facebook.com/Donate-Medicine-107228834894880" target="_blank" rel="noopener noreferrer" class="fa fa-facebook icn"></a>
     <a href="https://www.linkedin.com/company/donate-medicine/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin icn"></a>
     <a href="#" class="fa fa-instagram icn"></a>
-    <!-- email : donatemedicine.net@gmail.com -->
+    email : donatemedicine.net@gmail.com
     </ul>
 </div>
-</body>
-</html>
+
