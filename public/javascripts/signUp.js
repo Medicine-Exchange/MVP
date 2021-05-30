@@ -12,6 +12,9 @@ const geolocationOptions = {
 fetch(`https://a6onovzgof.execute-api.ap-south-1.amazonaws.com/dev/users?userId=${userId}`, {
   method: 'GET'
 }).then(response => response.json()).then(data => {
+  document.getElementById("submit_btn").style = "display:none"
+  document.getElementById("edit_btn").style = "display:visible"
+
   if (Object.keys(data).length) {
     // Profile Information is there.
     mode = 'update';
@@ -24,6 +27,19 @@ fetch(`https://a6onovzgof.execute-api.ap-south-1.amazonaws.com/dev/users?userId=
     document.getElementById("city").value = data.Address.City
     document.getElementById("state").value = data.Address.State;
     document.getElementById("pinCode").value = data.PinCode;
+
+
+    document.getElementById("mobile_number").readOnly = true
+    document.getElementById("name").readOnly = true;
+    document.getElementById("email").readOnly = true;
+    document.getElementById("line1").readOnly = true;
+    document.getElementById("line2").readOnly = true;
+    document.getElementById("line3").readOnly = true;
+    document.getElementById("city").readOnly = true;
+    document.getElementById("state").readOnly = true;
+    document.getElementById("pinCode").readOnly = true;
+
+    
   } else {
     document.getElementById('incompleteProfileError').style.display = 'block';
   }
@@ -46,7 +62,7 @@ function geolocationError(err) {
 
 navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, geolocationOptions);
 
-function updateUserDetails() {
+document.getElementById('submit_btn').addEventListener("click",   function updateUserDetails() {
   const phone = localStorage.getItem('mobileNumber');
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -91,9 +107,28 @@ function updateUserDetails() {
         'x-api-key': 'IxwzZBBo1A2ITRzf7Jlu59yHcCy7mjHr3OOPePqP'
       },
     }).then(response => response.json()).then(data => {
-      window.location.reload();
+      
+      window.location.href = "donate"
+      
+
+
     }).catch((error) => {
-      alert('Unable to update records')
+      alert('Unable to update records' +error)
     });
   }
 }
+)
+
+document.getElementById("edit_btn").addEventListener( "click" , function () {
+  document.getElementById("submit_btn").style = "display:block"
+  document.getElementById("edit_btn").style = "display:none"
+  document.getElementById("mobile_number").readOnly = false
+  document.getElementById("name").readOnly = false
+  document.getElementById("email").readOnly = false
+  document.getElementById("line1").readOnly = false
+  document.getElementById("line2").readOnly = false
+  document.getElementById("line3").readOnly = false
+  document.getElementById("city").readOnly = false
+  document.getElementById("state").readOnly = false
+  document.getElementById("pinCode").readOnly = false
+})
