@@ -113,7 +113,7 @@ document.getElementById('submit_btn').addEventListener("click",   function updat
 
 
     }).catch((error) => {
-      alert('Unable to update records')
+      alert('Unable to update records' +error)
     });
   }
 }
